@@ -1,0 +1,27 @@
+{
+  "name": "nti-go",
+  "version": "1.0.0",
+  "description": "Time tracking made easy.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/McKmillions/nti-go.git"
+  },
+  "author": "Zach McKimmins",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/McKmillions/nti-go/issues"
+  },
+  "homepage": "https://github.com/McKmillions/nti-go#readme",
+  "dependencies": {
+    "angular": "^1.5.2",
+    "body-parser": "^1.15.0",
+    "cors": "^2.7.1",
+    "express": "^4.13.4",
+    "express-session": "^1.13.0",
+    "mongoose": "^4.4.8"
+  }
+}
