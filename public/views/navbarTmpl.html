@@ -1,0 +1,164 @@
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="nav-color">
+    <!-- Branding -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="#/" class="navbar-brand text-lt" id="logo">
+        <span class="hidden-folded m-l-xs ng-binding fa-stack">
+            <i class="fa fa-circle fa-stack-2x sidenav-cal"></i>
+            <i class="fa fa-hourglass-end fa-stack-1x fa-inverse"></i>
+          </span>
+        <span class="hidden-folded m-l-xs ng-binding">NTI-GO</span>
+      </a>
+    </div>
+
+    <!-- <div class="nav navbar-left top-nav">
+    <a href="#" class="sidebar-open-button"><i class="fa fa-bars"></i></a>
+  </div> -->
+
+    <!-- Employee search -->
+    <ul class="nav navbar-left top-nav emp-search">
+      <form class="navbar-form navbar-form-sm navbar-left shift ng-pristine" ui-shift="prependTo" target=".navbar-collapse" role="search" ng-controller="userCtrl">
+        <div class="form-group">
+          <div class="input-group">
+            <input type="text" ng-model="selected" typeahead="user in users | filter:$viewValue | limitTo:8" class="form-control input-sm bg-light no-border rounded padder ng-pristine" placeholder="Search employees..." aria-autocomplete="list" aria-expanded="false"
+              aria-owns="typeahead-52-1164" aria-invalid="false" style="">
+            <ul class="dropdown-menu ng-isolate-scope ng-hide" ng-show="isOpen()" ng-style="{top: position.top+'px', left: position.left+'px'}" style="display: block;;display: block;" role="listbox" aria-hidden="true" typeahead-popup="" id="typeahead-52-1164" matches="matches"
+              active="activeIdx" select="select(activeIdx)" query="query" position="position">
+              <!-- ngRepeat: match in matches track by $index -->
+            </ul>
+            <span class="input-group-btn">
+                <button type="submit" class="btn btn-sm bg-light rounded"><i class="fa fa-search"></i></button>
+            </span>
+          </div>
+        </div>
+      </form>
+    </ul>
+
+    <!-- Right Navbar: User & Notifications -->
+    <ul class="nav navbar-right top-nav">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
+        <ul class="dropdown-menu message-dropdown">
+          <li class="message-preview">
+            <a href="#">
+              <div class="media">
+                <span class="pull-left">
+                                <img class="media-object" src="http://placehold.it/50x50" alt="">
+                            </span>
+                <div class="media-body">
+                  <h5 class="media-heading"><strong>John Smith</strong>
+                                </h5>
+                  <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur...</p>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li class="message-preview">
+            <a href="#">
+              <div class="media">
+                <span class="pull-left">
+                                <img class="media-object" src="http://placehold.it/50x50" alt="">
+                            </span>
+                <div class="media-body">
+                  <h5 class="media-heading"><strong>John Smith</strong>
+                                </h5>
+                  <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur...</p>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li class="message-preview">
+            <a href="#">
+              <div class="media">
+                <span class="pull-left">
+                                <img class="media-object" src="http://placehold.it/50x50" alt="">
+                            </span>
+                <div class="media-body">
+                  <h5 class="media-heading"><strong>John Smith</strong>
+                                </h5>
+                  <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur...</p>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li class="message-footer">
+            <a href="#">Read All New Messages</a>
+          </li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
+        <ul class="dropdown-menu alert-dropdown">
+          <li>
+            <a href="#">Alert Name <span class="label label-default">Alert Badge</span></a>
+          </li>
+          <li>
+            <li class="divider"></li>
+            <li>
+              <a href="#">View All</a>
+            </li>
+        </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
+            </li>
+            <li>
+              <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+            </li>
+          </ul>
+        </li>
+    </ul>
+  </div>
+
+  <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav side-nav">
+          <li>
+              <a href="index.html"><i class="fa fa-fw fa-home sidenav-dash"></i> Dashboard</a>
+          </li>
+          <li>
+              <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o sidenav-reports"></i> Reports</a>
+          </li>
+          <li>
+              <a href="tables.html"><i class="fa fa-fw fa-calendar sidenav-cal"></i> Calendar</a>
+          </li>
+          <li>
+              <a href="javascript:;" data-toggle="collapse" data-target="#demo">
+                <i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
+              <ul id="demo" class="collapse">
+
+                  <li>
+                      <a href="#">Dropdown Item</a>
+                  </li>
+                  <li>
+                      <a href="#">Dropdown Item</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+  </div>
+  <!-- /Sidebar -->
+
+</nav>
+<!-- /.navbar-collapse -->
