@@ -4,7 +4,7 @@ angular.module('ntigo', ['ui.router', 'ngCookies'])
     .state('clockin',{
       url: '/clockin',
       templateUrl: './views/clockin.html',
-      controller: 'userCtrl'
+      controller: 'clockinCtrl'
     })
     .state('login', {
       url: '/login',

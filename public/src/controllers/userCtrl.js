@@ -8,8 +8,8 @@ angular.module('ntigo').controller('userCtrl', function($scope, userService, $st
       .then(function(res) {
         if (res) {
           $scope.user = $cookies.getObject('user');
-          console.log(user.name + 'is logged in.', $scope.user);
-          $state.go('/home');
+          console.log(user.name + ' is logged in.', $scope.user);
+          $state.go('clockin');
         } else {
           console.log('Error');
         }
@@ -20,7 +20,7 @@ angular.module('ntigo').controller('userCtrl', function($scope, userService, $st
     console.log('Logged Out');
     $scope.user = {};
     $cookies.remove('user');
-    $state.go('/signin');
+    $state.go('login');
   };
 
   $scope.findUsers = function() {

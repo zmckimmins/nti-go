@@ -1,41 +1,66 @@
-<div class="user-login">
+<div class="container">
+  <div class="user-login">
 
-  <header>
-    <div class="logo">
-      <span class="hidden-folded m-l-xs fa-stack">
+    <header>
+      <div class="logo">
+        <span class="hidden-folded m-l-xs fa-stack">
           <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
           <i class="fa fa-hourglass-end fa-stack-1x"></i>
         </span>
-      <span class="logo-text">NTI-GO</span>
-    </div>
-    <div>
-      <ul class="nav nav-pills" role="tablist">
+        <span class="logo-text">NTI-GO</span>
+      </div>
+      <div>
+        <ul class="nav nav-pills" role="tablist">
           <li role="presentation"><a ui-sref="home">Home</a></li>
           <li role="presentation"><a ui-sref="profile">Profile</a></li>
           <li role="presentation"><a href="#">Settings</a></li>
           <li role="presentation"><a href="#">Messages</a></li>
           <li role="presentation"><a ng-click='logout()'>Logout</a></li>
         </ul>
-    </div>
-  </header>
+      </div>
+    </header>
 
-  <section class="whole-login">
-    <section class="login">
-      <div>
+    <section class="whole-login">
+      <section class="login">
+        <div>
           <h1>Clock In</h1>
           <form class="form-horizontal" role="form" method="post" ng-submit="login(loginEmail, loginPassword)">
             <div class="form-group">
               <select class="form-control">
                 <option>1</option>
                 <option>2</option>
-                <option>3</option>
+                <option selected>3</option>
                 <option>4</option>
                 <option>5</option>
               </select>
             </div>
-            <button type="submit" class="btn btn-primary clkbtn">Clock In</button>
+            <h3>{{headerAttr}}</h3>
+            <div>
+              <div id="clock">{{timer | date:'h:mm:ss'}}</div>
+              <button type="submit" class="btn btn-primary clkbtn" ng-click="toggleTimer()">{{mode}}</button>
+            </div>
+            <div>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Start</th>
+                    <th>End</th>
+                    <th>Duration (secs)</th>
+                  </tr>
+                </thead>
+                <tbody ng-repeat="item in timeSchedule.history">
+                  <tr>
+                    <td>{{item[0] | date:'MM/dd/yy HH:mm:ss'}}</td>
+                    <td>{{item[1] | date:'MM/dd/yy HH:mm:ss'}}</td>
+                    <td>{{item[2] | number:1}}</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div>
           </form>
-      </div>
+
+          </div>
+      </section>
     </section>
-  </section>
-</div>
+    </div>
+    </div>
