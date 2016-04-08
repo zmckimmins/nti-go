@@ -1,276 +1,213 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-    <title>NTI-GO</title>
+<div id="wrapper">
 
-    <!-- Bootstrap Core CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Morris Chart -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
-    <!-- Custom Fonts -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.2.4/css/simple-line-icons.css">
-    <!-- Custom CSS -->
-    <link href="./css/styles.css" rel="stylesheet">
+  <navbar-dir></navbar-dir>
 
-</head>
+  <div id="page-wrapper">
 
-<body ng-app="ntigoAdmin">
+    <div class="container-fluid">
 
-    <div id="wrapper">
-
-      <navbar-dir></navbar-dir>
-
-
-
-
-
-
-
-        <div id="page-wrapper">
-
-            <div class="container-fluid">
-
-                <!-- Page Heading -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="page-header">
-                            Dashboard
-                        </h1>
-                    </div>
-                </div>
-                <!-- /.row -->
-
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i> Reports</h3>
-                            </div>
-                            <div class="panel-body">
-                              <div id="bar-example"></div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <!-- /.row -->
-
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="panel panel-default">
-                      <div class="panel-body">
-                        <ul class="topstats">
-                          <li class="col-xs-6 col-lg-4">
-                            <span class="title"><i class="fa fa-dot-circle-o"></i> Todays Hours</span>
-                            <h3>409</h3>
-                            <span class="diff"><b class="color-down"><i class="fa fa-caret-down"></i> 26%</b> from yesterday</span>
-                          </li>
-                          <li class="col-xs-6 col-lg-4">
-                            <span class="title"><i class="fa fa-calendar-o"></i> This Week</span>
-                            <h3>1050</h3>
-                            <span class="diff"><b class="color-up"><i class="fa fa-caret-up"></i> 26%</b> from last week</span>
-                          </li>
-                          <li class="col-xs-6 col-lg-4">
-                            <span class="title"><i class="fa fa-users"></i> Total Hours</span>
-                            <h3 class="color-up">2050</h3>
-                            <span class="diff"><b class="color-up"><i class="fa fa-caret-up"></i> 26%</b> from last month</span>
-                          </li>
-                        </ul>
-                      </div>
-                      </div>
-                  </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-5">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-clock-o fa-fw"></i> Shift Activity</h3>
-                            </div>
-                            <div class="panel-body">
-                                <div class="list-group">
-                                  <ul>
-                                    <li class="list-group-item">
-                                      <span class="badge">just now</span>
-                                      <div class="avatar">
-                                        <img src="./img/bender_avatar.png" class="thumb-sm"> Bender Bending Rodriguez
-                                    </div>
-                                    </li>
-                                  </ul>
-                                    <a href="#" class="list-group-item">
-                                        <span class="badge">just now</span>
-                                        <div class="avatar">
-                                          <img src="./img/bender_avatar.png" class="thumb-sm"> Bender Bending Rodriguez
-                                      </div>
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <span class="badge">4 minutes ago</span>
-                                        <div class="avatar">
-                                        <img src="./img/fry_avatar.jpeg" class="thumb-sm"> Phillip J. Fry
-                                      </div>
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <span class="badge">23 minutes ago</span>
-                                        <div class="avatar">
-                                        <img src="./img/amywong_avatar.jpg" class="thumb-sm"> Amy Wong
-                                      </div>
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <span class="badge">46 minutes ago</span>
-                                        <div class="avatar">
-                                        <img src="./img/leela_avatar.jpg" class="thumb-sm"> Turanga Leela
-                                      </div>
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <span class="badge">1 hour ago</span>
-                                        <div class="avatar">
-                                        <img src="./img/professor_avatar.png" class="thumb-sm"> Professor Farnsworth
-                                      </div>
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <span class="badge">2 hours ago</span>
-                                        <div class="avatar">
-                                        <img src="./img/nibbler_avatar.jpg" class="thumb-sm"> Nibbler
-                                      </div>
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <span class="badge">yesterday</span>
-                                        <div class="avatar">
-                                        <img src="./img/zoidberg_avatar.png" class="thumb-sm"> Zoidberg
-                                      </div>
-                                    </a>
-                                    <a href="#" class="list-group-item">
-                                        <span class="badge">two days ago</span>
-                                        <div class="avatar">
-                                        <img src="./img/zapp_avatar.jpeg" class="thumb-sm"> Zapp Brannigan
-                                      </div>
-                                    </a>
-                                </div>
-                                <div class="text-right">
-                                    <a href="#">View All Activity <i class="fa fa-arrow-circle-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-7">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-users"></i> Daily Shift Panel</h3>
-                            </div>
-                            <div class="panel-body">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered table-hover table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th>Employee</th>
-                                                <th>Date</th>
-                                                <th>Clock In</th>
-                                                <th>Clock Out</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Bender</td>
-                                                <td>03/01/16</td>
-                                                <td>7:00 PM</td>
-                                                <td>5:00 PM</td>
-                                            </tr>
-                                            <tr>
-                                              <td>Bender</td>
-                                              <td>03/01/16</td>
-                                              <td>7:00 PM</td>
-                                              <td>5:00 PM</td>
-                                            </tr>
-                                            <tr>
-                                              <td>Bender</td>
-                                              <td>03/01/16</td>
-                                              <td>7:00 PM</td>
-                                              <td>5:00 PM</td>
-                                            </tr>
-                                            <tr>
-                                              <td>Bender</td>
-                                              <td>03/01/16</td>
-                                              <td>7:00 PM</td>
-                                              <td>5:00 PM</td>
-                                            </tr>
-                                            <tr>
-                                              <td>Bender</td>
-                                              <td>03/01/16</td>
-                                              <td>7:00 PM</td>
-                                              <td>5:00 PM</td>
-                                            </tr>
-                                            <tr>
-                                              <td>Bender</td>
-                                              <td>03/01/16</td>
-                                              <td>7:00 PM</td>
-                                              <td>5:00 PM</td>
-                                            </tr>
-                                            <tr>
-                                              <td>Bender</td>
-                                              <td>03/01/16</td>
-                                              <td>7:00 PM</td>
-                                              <td>5:00 PM</td>
-                                            </tr>
-                                            <tr>
-                                              <td>Bender</td>
-                                              <td>03/01/16</td>
-                                              <td>7:00 PM</td>
-                                              <td>5:00 PM</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class="text-right">
-                                    <a href="#">View All <i class="fa fa-chevron-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.row -->
-
-            </div>
-            <!-- /.container-fluid -->
-
+      <!-- Page Heading -->
+      <div class="row">
+        <div class="col-lg-12">
+          <h1 class="page-header">
+            Dashboard
+          </h1>
         </div>
-        <!-- /#page-wrapper -->
+      </div>
+      <!-- /.row -->
+
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i> Reports</h3>
+            </div>
+            <div class="panel-body">
+              <div id="bar-example"></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- /.row -->
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <ul class="topstats">
+                <li class="col-xs-6 col-lg-4">
+                  <span class="title"><i class="fa fa-dot-circle-o"></i> Todays Hours</span>
+                  <h3>409</h3>
+                  <span class="diff"><b class="color-down"><i class="fa fa-caret-down"></i> 26%</b> from yesterday</span>
+                </li>
+                <li class="col-xs-6 col-lg-4">
+                  <span class="title"><i class="fa fa-calendar-o"></i> This Week</span>
+                  <h3>1050</h3>
+                  <span class="diff"><b class="color-up"><i class="fa fa-caret-up"></i> 26%</b> from last week</span>
+                </li>
+                <li class="col-xs-6 col-lg-4">
+                  <span class="title"><i class="fa fa-users"></i> Total Hours</span>
+                  <h3 class="color-up">2050</h3>
+                  <span class="diff"><b class="color-up"><i class="fa fa-caret-up"></i> 26%</b> from last month</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-5">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title"><i class="fa fa-clock-o fa-fw"></i> Shift Activity</h3>
+            </div>
+            <div class="panel-body">
+              <div class="list-group">
+                <ul>
+                  <li class="list-group-item">
+                    <span class="badge">just now</span>
+                    <div class="avatar">
+                      <img src="./img/bender_avatar.png" class="thumb-sm"> Bender Bending Rodriguez
+                    </div>
+                  </li>
+                </ul>
+                <a href="#" class="list-group-item">
+                  <span class="badge">just now</span>
+                  <div class="avatar">
+                    <img src="./img/bender_avatar.png" class="thumb-sm"> Bender Bending Rodriguez
+                  </div>
+                </a>
+                <a href="#" class="list-group-item">
+                  <span class="badge">4 minutes ago</span>
+                  <div class="avatar">
+                    <img src="./img/fry_avatar.jpeg" class="thumb-sm"> Phillip J. Fry
+                  </div>
+                </a>
+                <a href="#" class="list-group-item">
+                  <span class="badge">23 minutes ago</span>
+                  <div class="avatar">
+                    <img src="./img/amywong_avatar.jpg" class="thumb-sm"> Amy Wong
+                  </div>
+                </a>
+                <a href="#" class="list-group-item">
+                  <span class="badge">46 minutes ago</span>
+                  <div class="avatar">
+                    <img src="./img/leela_avatar.jpg" class="thumb-sm"> Turanga Leela
+                  </div>
+                </a>
+                <a href="#" class="list-group-item">
+                  <span class="badge">1 hour ago</span>
+                  <div class="avatar">
+                    <img src="./img/professor_avatar.png" class="thumb-sm"> Professor Farnsworth
+                  </div>
+                </a>
+                <a href="#" class="list-group-item">
+                  <span class="badge">2 hours ago</span>
+                  <div class="avatar">
+                    <img src="./img/nibbler_avatar.jpg" class="thumb-sm"> Nibbler
+                  </div>
+                </a>
+                <a href="#" class="list-group-item">
+                  <span class="badge">yesterday</span>
+                  <div class="avatar">
+                    <img src="./img/zoidberg_avatar.png" class="thumb-sm"> Zoidberg
+                  </div>
+                </a>
+                <a href="#" class="list-group-item">
+                  <span class="badge">two days ago</span>
+                  <div class="avatar">
+                    <img src="./img/zapp_avatar.jpeg" class="thumb-sm"> Zapp Brannigan
+                  </div>
+                </a>
+              </div>
+              <div class="text-right">
+                <a href="#">View All Activity <i class="fa fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title"><i class="fa fa-users"></i> Daily Shift Panel</h3>
+            </div>
+            <div class="panel-body">
+              <div class="table-responsive">
+                <table class="table table-bordered table-hover table-striped">
+                  <thead>
+                    <tr>
+                      <th>Employee</th>
+                      <th>Date</th>
+                      <th>Clock In</th>
+                      <th>Clock Out</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Bender</td>
+                      <td>03/01/16</td>
+                      <td>7:00 PM</td>
+                      <td>5:00 PM</td>
+                    </tr>
+                    <tr>
+                      <td>Bender</td>
+                      <td>03/01/16</td>
+                      <td>7:00 PM</td>
+                      <td>5:00 PM</td>
+                    </tr>
+                    <tr>
+                      <td>Bender</td>
+                      <td>03/01/16</td>
+                      <td>7:00 PM</td>
+                      <td>5:00 PM</td>
+                    </tr>
+                    <tr>
+                      <td>Bender</td>
+                      <td>03/01/16</td>
+                      <td>7:00 PM</td>
+                      <td>5:00 PM</td>
+                    </tr>
+                    <tr>
+                      <td>Bender</td>
+                      <td>03/01/16</td>
+                      <td>7:00 PM</td>
+                      <td>5:00 PM</td>
+                    </tr>
+                    <tr>
+                      <td>Bender</td>
+                      <td>03/01/16</td>
+                      <td>7:00 PM</td>
+                      <td>5:00 PM</td>
+                    </tr>
+                    <tr>
+                      <td>Bender</td>
+                      <td>03/01/16</td>
+                      <td>7:00 PM</td>
+                      <td>5:00 PM</td>
+                    </tr>
+                    <tr>
+                      <td>Bender</td>
+                      <td>03/01/16</td>
+                      <td>7:00 PM</td>
+                      <td>5:00 PM</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="text-right">
+                <a href="#">View All <i class="fa fa-chevron-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.row -->
 
     </div>
-    <!-- /#wrapper -->
+    <!-- /.container-fluid -->
 
-    <!-- Jquery 1.9.1 -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
-    <!-- minified Bootstrap JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    <!-- JS Morris Charts -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
-    <script src="http://cdn.oesmith.co.uk/morris-0.4.1.min.js"></script>
-    <script src="./src/js/charts.js"></script>
-    <!-- Angular & ui-router -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
-    <!-- Firebase -->
-    <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
-    <!-- AngularFire -->
-    <script src="https://cdn.firebase.com/libs/angularfire/1.1.3/angularfire.js"></script>
-    <!-- cookies -->
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-cookies.js"></script>
-
-    <!-- Angular App -->
-    <script src="./src/admin-app.js"></script>
-    <!-- Angular Controllers -->
-    <!-- <script src="./src/mainCtrl.js"></script> -->
-    <!-- <script src="./src/adminCtrl.js"></script> -->
-    <!-- Angular Services -->
-    <!-- <script src="./src/mainSrvc.js"></script> -->
-    <!-- Angular Directives -->
-    <script src="./src/directives/navbarDir.js"></script>
-    <!-- <script src="./views/footerDir.js"></script> -->
-
-</body>
-
-</html>
+  </div>
+  <!-- /#page-wrapper -->
+</div>

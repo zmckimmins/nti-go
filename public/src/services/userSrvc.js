@@ -1,5 +1,5 @@
 angular.module('ntigo')
-.service('userService', function($http, $q, $cookies) {
+.service('userService', function($http, $state, $q, $cookies) {
 
   this.addUser = function(newUser) {
     var defer = $q.defer();
@@ -10,6 +10,7 @@ angular.module('ntigo')
       })
       .then(function(res) {
         defer.resolve(res.data);
+        $state.go('clockin');
       }, function(err) {
         defer.reject(err);
       });
