@@ -14,6 +14,7 @@ app.get('/api/user', usersCtrl.getUser);
 app.get('/api/user/:id', usersCtrl.getUserById);
 app.get('/api/users', usersCtrl.getUsers);
 app.put('/api/user/:id', usersCtrl.updateUser);
+app.post('/api/user/:id/shift', usersCtrl.addShift);
 
 
 mongoose.connect(mongoUri);

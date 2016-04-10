@@ -8,6 +8,9 @@ angular.module('ntigo')
     $scope.clockedIn = false;
     $scope.timer = "00:00:00";
 
+    // $scope.submitTime = function (location) {
+    //   clockinSrvc.timeSchedule(location);
+    // };
 
     function checkTime(i) {
       i = (i < 1) ? 0 : i;
@@ -52,7 +55,7 @@ angular.module('ntigo')
     /*--------------------
     Handle end of timer
     --------------------*/
-    function stopTimer() {
+      function stopTimer() {
       // toggle
       setMode();
 
@@ -67,13 +70,12 @@ angular.module('ntigo')
       ]);
       console.log("time start= ", timeStart);
       console.log("time end= ", timeEnd);
-      console.log("History ", $scope.timeSchedule.history[0]);
+      var i = 0;
+      console.log("History ", $scope.timeSchedule.history[i]);
+      i++;
       // console.log("number: ")
-
-      function timeDuration() {
-        clockinSrvc.addDuration(duration);
-
-      }
+      console.log("sdfasd", $scope.timeSchedule.history);
+      clockinSrvc.addDuration($scope.timeSchedule.history);
     }
 
     /*--------------------

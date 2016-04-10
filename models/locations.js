@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var locationSchema = new mongoose.Schema({
+var locationsSchema = new mongoose.Schema({
   business: {type: String},
   projectname: {type: String},
   city: {type: String, unique: true, required: true, index: true},
@@ -8,4 +8,4 @@ var locationSchema = new mongoose.Schema({
   zip: {type: Boolean, required:true, default: false}
 });
 
-module.exports = mongoose.model('Location', locationSchema);
+module.exports = mongoose.model('Locations', locationsSchema);

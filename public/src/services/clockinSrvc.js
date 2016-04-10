@@ -1,12 +1,21 @@
-angular.module('ntigo')
-.service('clockinSrvc', function() {
+angular.module('ntigo').service('clockinSrvc', ['$cookies','$http', function($cookies, $http) {
+  var user = $cookies.getObject('user');
 
   this.timeSchedule = {
-    history: []
+    history: [],
   };
 
-  this.timeDuration = {
-    daily: []
+  this.addDuration = function(data){
+    console.log("data", data);
+      return $http({
+        method: "POST",
+        url:  '/api/user/' + user._id + '/shift',
+        data: {
+          "clockin": data[0],
+          "clockout": data[1],
+          "duration": data[2]
+        }
+      });
   };
 
-});
+}]);

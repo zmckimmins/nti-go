@@ -1,20 +1,43 @@
-angular.module('ntigo', ['ui.router', 'ngCookies', 'uiRouterStyles'])
+angular.module('ntigo', ['ui.router', 'ngCookies', 'uiRouterStyles', 'ui.grid'])
   .config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('clockin', {
         url: '/clockin',
         templateUrl: './views/clockin.html',
-        controller: 'clockinCtrl'
+        controller: 'clockinCtrl',
+        data: {
+          css: ['./css/main.css']
+        },
+        // resolve: {
+        //   user: function($cookies, $location){
+        //     var authedUser = $cookies.getObject("user");
+        //     console.log("app.js", authedUser);
+        //     if (!authedUser) {
+        //       console.log("Rejected! You shall not pass!");
+        //       $location.url('/login');
+        //     }
+        //     else {
+        //       console.log("Proceed", authedUser);
+        //       return authedUser;
+        //     }
+        //   }
+        // }
       })
       .state('login', {
         url: '/login',
         templateUrl: './views/loginTmpl.html',
-        controller: 'userCtrl'
+        controller: 'userCtrl',
+        data: {
+          css: ['./css/main.css']
+        }
       })
       .state('register', {
         url: '/register',
         templateUrl: './views/regTmpl.html',
-        controller: 'regCtrl'
+        controller: 'regCtrl',
+        data: {
+          css: ['./css/main.css']
+        }
       })
       .state('admin', {
         url: '/admin',

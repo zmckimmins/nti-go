@@ -1,4 +1,5 @@
-var mongoose = require('mongoose');
+var mongoose = require('mongoose'),
+Schema = mongoose.Schema;
 
 var userSchema = new mongoose.Schema({
   firstname: {type: String},
@@ -6,7 +7,7 @@ var userSchema = new mongoose.Schema({
   email: {type: String, unique: true, required: true, index: true},
   password: {type: String, required: true},
   admin: {type: Boolean, required:true, default: false},
-  shifts: [{ type: Schema.Types.ObjectId, ref: 'Shifts' }]
+  shift: [{ type: Schema.Types.ObjectId, ref: 'Shift' }]
 });
 
 module.exports = mongoose.model('User', userSchema);

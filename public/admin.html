@@ -58,7 +58,7 @@
       </div>
 
       <div class="row">
-        <div class="col-lg-5">
+        <div class="col-lg-4">
           <div class="panel panel-default">
             <div class="panel-heading">
               <h3 class="panel-title"><i class="fa fa-clock-o fa-fw"></i> Shift Activity</h3>
@@ -128,7 +128,7 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-7">
+        <!-- <div class="col-lg-8">
           <div class="panel panel-default">
             <div class="panel-heading">
               <h3 class="panel-title"><i class="fa fa-users"></i> Daily Shift Panel</h3>
@@ -201,7 +201,37 @@
               </div>
             </div>
           </div>
+        </div> -->
+
+        <!--daily shift panel -->
+        <div class="col-lg-8">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title"><i class="fa fa-users"></i> Daily Shift Panel</h3>
+            </div>
+            <div class="panel-body">
+              <!-- <div id="grid1" ng-model="user" ng-repeat="user in users" ui-grid="{ data: user.shift }" class="shiftGrid"></div> -->
+              <div ng-repeat="user in users">{{users.firstname}}</div>
+              <div ng-controller="userCtrl">
+{{users.firstname}}
+  <input type="search" ng-model="q" placeholder="filter users..." aria-label="filter users" />
+  <ul class="example-animate-container">
+    <li class="animate-repeat" ng-repeat="user in users | filter:q as results">
+      [{{$index + 1}}] {{friend.name}} who is {{friend.age}} years old.
+    </li>
+    <li class="animate-repeat" ng-if="results.length == 0">
+      <strong>No results found...</strong>
+    </li>
+  </ul>
+</div>
+              <div class="text-right">
+                <a href="#">View All <i class="fa fa-chevron-right"></i></a>
+              </div>
+            </div>
+          </div>
         </div>
+        <!--/daily shift panel -->
+
       </div>
       <!-- /.row -->
 
