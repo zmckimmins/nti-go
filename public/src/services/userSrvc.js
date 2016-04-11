@@ -24,6 +24,13 @@ angular.module('ntigo')
     });
   };
 
+  this.getUserShifts = function() {
+    return $http({
+      method: 'GET',
+      url: '/api/user/shifts'
+    });
+  };
+
   this.login = function(query) {
     var deferred = $q.defer();
     $http({

@@ -1,7 +1,8 @@
-var mongoose = require('mongoose');
-var User = require('../models/User');
-var Locations = require('../models/Locations');
-var Shift = require('../models/Shift');
+var mongoose = require('mongoose'),
+    User = require('../models/User'),
+    Locations = require('../models/Locations'),
+    Shift = require('../models/Shift'),
+    deepPopulate = require('mongoose-deep-populate')(mongoose);
 
 module.exports = {
 
@@ -14,10 +15,9 @@ module.exports = {
     });
   },
 
-  getUser: function(req, res){
-    User.findOne({
-      email: req.query.email
-    }).populate('shift').then(function(user, err){
+  getUserShifts: function(req, res){
+    User.find({}).populate('shift').then(function(user, err){
+      console.log('User', user);
       if(err){
         return res.status(500).send(err);
       }

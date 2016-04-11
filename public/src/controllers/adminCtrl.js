@@ -1,53 +1,90 @@
-angular.module('ntigo').controller('adminCtrl', function($scope, userService, $state, $cookies) {
+// angular.module('ntigo').controller('adminCtrl', function($scope, userService, $state, $cookies) {
+angular.module('ntigo')
+  .controller('adminCtrl', ['$scope', 'userService', '$state', '$cookies', function($scope, userService, $state, $cookies) {
 
-  $scope.gridOptions = {
-  enableFiltering: true,
-  enableCellEditOnFocus: false,
-  enablePaginationControls: true,
-  enableSorting: true,
-  enableRowSelection: true,
-  enableRowHeaderSelection: false,
-  enableColumnResizing: true,
-  paginationPageSizes: [10, 12, 15, 18],
-  paginationPageSize: 18,
-};
+    var findUsers = function() {
+      userService.getUsers()
+        .then(function(res) {
+          $scope.users = res.data;
+          // console.log($scope.users);
+        });
+    };
 
-// $scope.gridOptions.columnDefs = [
-//   { name: 'isbn13',
-//     headerCellClass: $scope.highlightFilteredHeader,
-//     cellTemplate:'<div class="editBook1"><a class="editBook" href="" ng-click="$event.stopPropagation(); grid.appScope.editBook(row.entity.isbn13, row);">'
-//       + '{{row.entity[col.field] | uppercase }}&nbsp; <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></div>',
-//     cellClass: 'gridField',
-//     displayName: 'ISBN13',
-//     width: 140,
-//     maxWidth: 160,
-//     minWidth: 130,
-//     enableHiding: false,
-//     enableCellEdit: false },
-//   { name: 'title',
-//     headerCellClass: $scope.highlightFilteredHeader ,
-//     cellTemplate: '<div class="padded">{{row.entity.title}}</div>',
-//     cellClass: 'gridField',
-//     displayName: 'Title',
-//     width: 250,
-//     maxWidth: 480,
-//     minWidth: 220,
-//     enableHiding: false,
-//     enableCellEdit: false }
-// ];
-//
-// $scope.gridOptions = {
-//     data: 'getUsers',
-//     height: '110px',
-//     sortInfo: {fields: ['Song', 'Artist', 'Collection', 'Type'], directions: ['asc']},
-//     columnDefs: [
-//       {field: 'Play', displayName: 'Play', width: '40px', cellTemplate: '<div class="ngCellText" ng-class="col.colIndex()"><a href="{{row.getProperty(col.field)}}"><img src="http://www.icty.org/x/image/Miscellaneous/play_icon30x30.png"></a></div>'},
-//       {field: 'Artist', displayName: 'Artist'},
-//       {field: 'Collection', displayName: 'Collection'},
-//       {field: 'AlbumArt', displayName: 'Album Art', width: '110px', cellTemplate: '<div class="ngCellText" ng-class="col.colIndex()"><img src="{{row.getProperty(col.field)}}"></div>'},
-//       {field: 'Type', displayName: 'Type'},
-//       {field: 'CollectionPrice', displayName: 'Collection Price'},
-//     ]
-// };
+    findUsers();
 
-});
+
+    // var getShifts = function() {
+    //   userService.getUserShifts().then(function(result) {
+    //       $scope.uzers = result.data;
+    //     $scope.uzers.map(function(item) {
+    //       $scope.shifts = item.shift;
+    //     });
+    //   });
+    // };
+
+    $scope.Shifts = [];
+    var getShifts = function() {
+      userService.getUserShifts().then(function(result) {
+        // console.log('reult', result);
+        var returnedUsers = result.data;
+        for (var i = 0; i < returnedUsers.length; i++) {
+          for (var j = 0; j < returnedUsers[i].shift.length; j++) {
+            // console.log(returnedUsers[i].shift[j]);
+            $scope.Shifts.push({
+              'name': returnedUsers[i].firstname + ' ' + returnedUsers[i].lastname,
+              'clock-in': returnedUsers[i].shift[j].clockin,
+              'clock-out': returnedUsers[i].shift[j].clockout,
+              'duration': returnedUsers[i].shift[j].duration
+            });
+          }
+        }
+        // console.log($scope.Shifts);
+      });
+    };
+
+    getShifts();
+
+    $scope.gridOptions = {
+      enableCellSelection: true,
+      enableCellEditOnFocus: true,
+      cellEditableCondition: 'row.entity.editable',
+      columnDefs: [{
+        field: 'Name',
+        displayName: 'Name',
+        width: "15%",
+        resizable: true,
+        enableCellEdit: false
+      }, {
+        field: 'Clock-In',
+        displayName: 'Clock-In',
+        width: "20%",
+        resizable: true,
+        enableCellEdit: false
+      }, {
+        field: 'Clock-Out',
+        displayName: 'Clock-Out',
+        width: "20%",
+        resizable: true,
+        enableCellEdit: false
+      }, {
+        field: 'Duration',
+        cellClass: 'Duration',
+        width: "20%",
+        resizable: true,
+        enableCellEdit: false
+      }]
+    };
+
+    //   $scope.gridOptions = {
+    //   enableFiltering: true,
+    //   enableCellEditOnFocus: false,
+    //   enablePaginationControls: true,
+    //   enableSorting: true,
+    //   enableRowSelection: true,
+    //   enableRowHeaderSelection: false,
+    //   enableColumnResizing: true,
+    //   paginationPageSizes: [10, 12, 15, 18],
+    //   paginationPageSize: 18,
+    // };
+
+  }]);
