@@ -15,6 +15,17 @@ module.exports = {
     });
   },
 
+  getUser: function(req, res){
+    User.findOne({
+      email: req.query.email
+    }).then(function(user,err){
+      if(err){
+      return res.status(500).send(err);
+    }
+    res.send(user);
+  });
+  },
+
   getUserShifts: function(req, res){
     User.find({}).populate('shift').then(function(user, err){
       console.log('User', user);

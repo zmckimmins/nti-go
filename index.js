@@ -10,7 +10,7 @@ var express = require('express'),
 app.use(cors(), bodyParser.json(), express.static(__dirname + '/public'));
 
 app.post('/api/users', usersCtrl.addUser);
-// app.get('/api/user', usersCtrl.getUser);
+app.get('/api/user', usersCtrl.getUser);
 app.get('/api/user/shifts', usersCtrl.getUserShifts);
 app.get('/api/user/:id', usersCtrl.getUserById);
 app.get('/api/users', usersCtrl.getUsers);

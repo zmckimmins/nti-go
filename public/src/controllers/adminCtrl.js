@@ -25,11 +25,11 @@ angular.module('ntigo')
     $scope.Shifts = [];
     var getShifts = function() {
       userService.getUserShifts().then(function(result) {
-        // console.log('reult', result);
+        console.log('reult', result);
         var returnedUsers = result.data;
         for (var i = 0; i < returnedUsers.length; i++) {
           for (var j = 0; j < returnedUsers[i].shift.length; j++) {
-            // console.log(returnedUsers[i].shift[j]);
+            console.log(returnedUsers[i].shift[j]);
             $scope.Shifts.push({
               'name': returnedUsers[i].firstname + ' ' + returnedUsers[i].lastname,
               'clock-in': returnedUsers[i].shift[j].clockin,
@@ -38,7 +38,7 @@ angular.module('ntigo')
             });
           }
         }
-        // console.log($scope.Shifts);
+        console.log($scope.Shifts);
       });
     };
 
@@ -51,7 +51,7 @@ angular.module('ntigo')
       columnDefs: [{
         field: 'Name',
         displayName: 'Name',
-        width: "15%",
+        width: "10%",
         resizable: true,
         enableCellEdit: false
       }, {

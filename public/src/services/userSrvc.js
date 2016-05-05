@@ -70,7 +70,7 @@ angular.module('ntigo')
         url: '/api/user/' + name,
       })
       .then(function(res) {
-        console.log(res.data);
+        // console.log(res.data);
         deferred.resolve(res.data);
       }, function(err) {
         deferred.reject(err);
@@ -79,7 +79,7 @@ angular.module('ntigo')
   };
 
   this.editUser = function(id, updatedUser) {
-    console.log(id, updatedUser);
+    // console.log(id, updatedUser);
     return $http({
       method: 'PUT',
       url: '/api/user/' + id,
