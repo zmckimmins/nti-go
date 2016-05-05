@@ -9,7 +9,7 @@ var express = require('express'),
       origin: 'http://ntigo.herokuapp.com'
     },
     // mongoUri = 'mongodb://localhost:27017/ntigo'
-    mongoUri = 'mongodb://zmckimmins:ntigo7!zach@ds013232.mlab.com:13232/heroku_ltlw2pgv';
+    mongoUri = 'mongodb://zmckimmins:ntigo7!zach@ds013232.mlab.com:13232/zmckimmins';
 
 app.use(cors(corsOptions), bodyParser.json(), express.static(__dirname + '/public'));
 
