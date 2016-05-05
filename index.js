@@ -5,10 +5,13 @@ var express = require('express'),
     mongoose = require('mongoose'),
     usersCtrl = require('./controllers/UsersCtrl.js'),
     port = process.env.PORT || 9001,
+    corsOptions = {
+      origin: 'http://ntigo.herokuapp.com'
+    },
     // mongoUri = 'mongodb://localhost:27017/ntigo'
-    mongoUri = 'mongodb://zmckimmins:ntigo7!zach@ds021701.mlab.com:21701/ntigo';
+    mongoUri = 'mongodb://zmckimmins:ntigo7!zach@ds013232.mlab.com:13232/heroku_ltlw2pgv';
 
-app.use(cors(), bodyParser.json(), express.static(__dirname + '/public'));
+app.use(cors(corsOptions), bodyParser.json(), express.static(__dirname + '/public'));
 
 app.post('/api/users', usersCtrl.addUser);
 app.get('/api/user', usersCtrl.getUser);
