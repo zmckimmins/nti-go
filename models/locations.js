@@ -6,6 +6,6 @@ var locationsSchema = new mongoose.Schema({
   city: {type: String, unique: true, required: true, index: true},
   state: {type: String, required: true},
   zip: {type: Boolean, required:true, default: false}
-});
+}); 
 
 module.exports = mongoose.model('Locations', locationsSchema);
