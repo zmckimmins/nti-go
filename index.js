@@ -4,8 +4,10 @@ var express = require('express'),
     cors = require('cors'),
     mongoose = require('mongoose'),
     usersCtrl = require('./controllers/UsersCtrl.js'),
-    port = 9001,
-    mongoUri = 'mongodb://localhost:27017/ntigo';
+    port = process.env.PORT || 9001,
+    // mongoUri = 'mongodb://localhost:27017/ntigo'
+    config = require("./secrets.js"),
+    mongoUri = config.mlab;
 
 app.use(cors(), bodyParser.json(), express.static(__dirname + '/public'));
 
