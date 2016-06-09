@@ -10,6 +10,7 @@ angular.module('ntigo')
       })
       .then(function(res) {
         defer.resolve(res.data);
+        console.log(res.data);
         $state.go('clockin');
       }, function(err) {
         defer.reject(err);

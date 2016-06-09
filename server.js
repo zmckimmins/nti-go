@@ -9,9 +9,11 @@ var express = require('express'),
       origin: 'http://ntigo.herokuapp.com'
     },
     // mongoUri = 'mongodb://localhost:27017/ntigo'
-    mongoUri = 'mongodb://zmckimmins:ntigo7!zach@ds013232.mlab.com:13232/zmckimmins';
+    // mongoUri = 'mongodb://zmckimmins:ntigo7!zach@ds013232.mlab.com:13232/zmckimmins';
+    mongoUri = 'mongodb://zkmckimmins:test@ds021701.mlab.com:21701/ntigo';
 
 app.use(cors(corsOptions), bodyParser.json(), express.static(__dirname + '/public'));
+// app.use(cors(), bodyParser.json(), express.static(__dirname + '/public'));
 
 app.post('/api/users', usersCtrl.addUser);
 app.get('/api/user', usersCtrl.getUser);

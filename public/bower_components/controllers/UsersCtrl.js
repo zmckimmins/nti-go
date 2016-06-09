@@ -12,7 +12,6 @@ module.exports = {
         return res.status(500).send(err);
       }
       res.send(user);
-      console.log(user);
     });
   },
 
